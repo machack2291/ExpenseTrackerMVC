@@ -54,9 +54,9 @@ namespace Expense_Tracker.Controllers
 
 
         // POST: Category/Delete/5
-        [HttpGet, ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Category == null)
             {
