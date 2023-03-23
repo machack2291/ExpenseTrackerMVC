@@ -56,11 +56,11 @@ namespace Expense_Tracker.Controllers
         // POST: Category/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (_context.Category == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Category'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Category' is null.");
             }
             var category = await _context.Category.FindAsync(id);
             if (category != null)
